@@ -8,21 +8,21 @@
 
 //a = item value
 //b = item index
-//l = cell row length. Can be any factor of the number of cells in the field array. I am going with a square.
+//l = cell row length. VERY important to calculating live or dead states. I am going with a square-shaped field.
 let l = Math.sqrt(field.length)
 
+function surroundSum(a, b){ // to calculate the number of live cells surrounding a cell
+    return a[b-1] 
+         + a[b+1] 
+         + a[b-l-1] 
+         + a[b-l] 
+         + a[b-l+1] 
+         + a[b+l-1] 
+         + a[b+l] 
+         + a[b+l+1]
+}
+
 function deadoralive(a,b){ // to work out whether a cell will be live or dead for the next cycle
-    function surroundSum(a, b){ // to calculate the number of live cells surrounding a cell
-        return a[b-1] 
-             + a[b+1] 
-             + a[b-l-1] 
-             + a[b-l] 
-             + a[b-l+1] 
-             + a[b+l-1] 
-             + a[b+l] 
-             + a[b+l+1]
-    } 
-    
     if (a == 0){
         if (surroundSum(a,b) = 3){
             return a = 1
@@ -42,5 +42,6 @@ function nextgeneration(field){
     for (let i=0; i < field.length; i++){
         nextgen.push(deadoralive(field[i], i))
     }
-    field = nextgen;
-} // Making a new array to work out thenew 
+    let field = nextgen;
+} // Making a new array to work out the new field
+// Making inputs for this is going to be hard if we don't have an interface. I suggest we make an interface for it. 
