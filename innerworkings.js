@@ -8,7 +8,7 @@ for (let i = 0; i < 400; i++){
 
 //a = item value
 //b = item index
-//l = cell row length. Can be any factor of the number of cells in the field array. I am going with a square.
+//l = cell row length. VERY important to calculating live or dead states. I am going with a square-shaped field.
 let l = Math.sqrt(field.length)
 
 function deadoralive(a,b){ // to work out whether a cell will be live or dead for the next cycle
@@ -42,5 +42,6 @@ function nextgeneration(field){
     for (let i=0; i < field.length; i++){
         nextgen.push(deadoralive(field[i], i))
     }
-    field = nextgen;
-} // Making a new array to work out thenew 
+    let field = nextgen;
+} // Making a new array to work out the new field
+// Making inputs for this is going to be hard if we don't have an interface. I suggest we make an interface for it. 
