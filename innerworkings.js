@@ -11,18 +11,18 @@ for (let i = 0; i < 400; i++){
 //l = cell row length. VERY important to calculating live or dead states. I am going with a square-shaped field.
 let l = Math.sqrt(field.length)
 
+function surroundSum(a, b){ // to calculate the number of live cells surrounding a cell
+    return a[b-1] 
+         + a[b+1] 
+         + a[b-l-1] 
+         + a[b-l] 
+         + a[b-l+1] 
+         + a[b+l-1] 
+         + a[b+l] 
+         + a[b+l+1]
+}
+
 function deadoralive(a,b){ // to work out whether a cell will be live or dead for the next cycle
-    function surroundSum(a, b){ // to calculate the number of live cells surrounding a cell
-        return a[b-1] 
-             + a[b+1] 
-             + a[b-l-1] 
-             + a[b-l] 
-             + a[b-l+1] 
-             + a[b+l-1] 
-             + a[b+l] 
-             + a[b+l+1]
-    } 
-    
     if (a == 0){
         if (surroundSum(a,b) = 3){
             return a = 1
