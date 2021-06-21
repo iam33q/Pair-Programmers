@@ -1,10 +1,10 @@
 // Incomplete series of operations that run the Game of Life. 
 // To add: Associate to web elements, ability to alter initial and live field input, account for edge cells.
 
-let field = [] // Array representing the grid. Each item in the array will be numbered 0 or 1 representing dead or alive state.
-for (let i = 0; i < 400; i++){
-    field.push(0)
-}
+// let field = [] // Array representing the grid. Each item in the array will be numbered 0 or 1 representing dead or alive state.
+// for (let i = 0; i < 400; i++){
+//     field.push(0)
+// }
 
 //a = item value
 //b = item index
