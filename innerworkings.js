@@ -1,10 +1,14 @@
-let field = [] // Our initial grid, let it be a square. Full of dead cells.
+// Incomplete series of operations that run the Game of Life. 
+// To add: Associate to web elements, ability to alter initial and live field input, account for edge cells.
+
+let field = [] // Array representing the grid. Each item in the array will be numbered 0 or 1 representing dead or alive state.
 for (let i = 0; i < 400; i++){
     field.push(0)
 }
+
 //a = item value
 //b = item index
-//l = cell row length
+//l = cell row length. Can be any factor of the number of cells in the field array. I am going with a square.
 let l = Math.sqrt(field.length)
 
 function deadoralive(a,b){ // to work out whether a cell will be live or dead for the next cycle
